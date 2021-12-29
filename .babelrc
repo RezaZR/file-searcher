@@ -1,6 +1,7 @@
 {
     "plugins": [
-      ["import", { "libraryName": "antd" }]
+      ["import", { "libraryName": "antd" }],
+      ["@emotion/babel-plugin"]
     ],
     "presets": ["next/babel"],
     "ignore": []

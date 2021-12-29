@@ -1,7 +1,11 @@
-import { Input  } from 'antd';
+import React from 'react';
 
-export default function Home() {
+import { Input } from 'antd';
+
+const Home = () => {
   return (
     <Input placeholder="Basic usage" />
   )
 }
+
+export default Home;
