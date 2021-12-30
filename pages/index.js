@@ -14,12 +14,15 @@ export const getServerSideProps = ({ query }) => {
   if (Object.keys(query).length) {
     const { target, ignoreList, hasDot, isAbsolutePath } = query;
     const options = {
+      cwd: '../../../..',
       ignore: ignoreList.length ? ignoreList.split(',') : [],
       dot: hasDot,
       absolute: isAbsolutePath,
     };
-    fileList = glob.sync(target, options);
+    fileList = glob.sync(`${target}`, options);
   }
+
+  console.log({ query, fileList, dir: __dirname });
 
   return {
     props: {
