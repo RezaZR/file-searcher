@@ -2,9 +2,27 @@ import React from 'react';
 
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import { renderStatic } from '../utils/react-emotion/renderer'
+import renderStatic from '../utils/react-emotion/renderer'
 
-export default function AppDocument() {
+export const getStaticProps = async ctx => {
+	const page = await ctx.renderPage();
+	const { css, ids } = await renderStatic(page.html);
+	const initialProps = await Document.getInitialProps(ctx);
+
+	return {
+		...initialProps,
+		styles: (
+			<>
+				{initialProps.styles}
+				<style
+					data-emotion={`css ${ids.join(' ')}`}
+					dangerouslySetInnerHTML={{ __html: css }}
+				/>
+			</>
+		),
+	}
+}
+const AppDocument = () => {
 	return (
 		<Html>
 			<Head />
@@ -16,21 +34,4 @@ export default function AppDocument() {
 	)
 }
 
-export const getStaticProps = async ctx => {
-	const page = await ctx.renderPage();
-	const { css, ids } = await renderStatic(page.html);
-	const initialProps = await Document.getInitialProps(ctx);
-
-	return {
-		...initialProps,
-		styles: (
-			<React.Fragment>
-				{initialProps.styles}
-				<style
-					data-emotion={`css ${ids.join(' ')}`}
-					dangerouslySetInnerHTML={{ __html: css }}
-				/>
-			</React.Fragment>
-		),
-	}
-}
+export default AppDocument;

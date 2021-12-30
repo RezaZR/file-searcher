@@ -6,9 +6,13 @@ import { Layout } from 'antd';
 
 import { container } from "../styles/";
 
+const { Content } = Layout;
+
 const App = ({ Component, pageProps }) => (
-	<Layout className={container}>
-		<Component {...pageProps} />
+	<Layout>
+		<Content className={container}>
+			<Component {...pageProps} />
+		</Content>
 	</Layout>
 );
 
