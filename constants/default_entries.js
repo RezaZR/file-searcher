@@ -1,7 +1,22 @@
-const DEFAULT_IGNORE_LIST = {
-  'contentxite': ['**/services/*/@types/**', '**/services/*/build/**', '**/services/*/docker/**', '**/services/*/node_modules/**', '**/services/*/coverage/**', '**/services/*/static/**', '**/services/*/utils/**'],
+export const DEFAULT_IGNORE_LIST = {
+  contentxite: [
+    "tokopedia-lite/services/*/@types/**",
+    "tokopedia-lite/services/*/build/**",
+    "tokopedia-lite/services/*/docker/**",
+    "tokopedia-lite/services/*/node_modules/**",
+    "tokopedia-lite/services/*/coverage/**",
+    "tokopedia-lite/services/*/static/**",
+    "tokopedia-lite/services/*/utils/**"
+  ]
 };
 
-const DEFAULT_TARGET = {
-  'contentxite': ['**/services/arael/**/__buggy_tests__', '**/services/b2b/**/__buggy_tests__', '**/services/freyja/**/__buggy_tests__', '**/services/mynakama/**/__buggy_tests__', '**/services/play/**/__buggy_tests__', '**/services/theseus/**/__buggy_tests__'],
+export const DEFAULT_TARGET = {
+  contentxite: [
+    "tokopedia-lite/services/arael/**/__buggy_tests__",
+    "tokopedia-lite/services/b2b/**/__buggy_tests__",
+    "tokopedia-lite*/services/freyja/**/__buggy_tests__",
+    "tokopedia-lite/services/mynakama/**/__buggy_tests__",
+    "tokopedia-lite/services/play/**/__buggy_tests__",
+    "tokopedia-lite/services/theseus/**/__buggy_tests__"
+  ]
 };
