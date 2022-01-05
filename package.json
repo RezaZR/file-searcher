@@ -9,10 +9,7 @@
     "@emotion/css": "^11.7.1",
     "@emotion/server": "^11.4.0",
     "antd": "^4.18.0",
-    "fast-glob": "^3.2.7",
-    "fs": "^0.0.1-security",
     "glob": "^7.2.0",
-    "list-react-files": "^0.2.0",
     "next": "latest",
     "react": "17.0.2",
     "react-dom": "17.0.2"
