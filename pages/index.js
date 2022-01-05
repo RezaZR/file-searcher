@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useRouter } from 'next/router';
 
-import { Form, Input, Checkbox, Divider, Button, Table, message } from 'antd';
+import { Form, Input, Checkbox, Divider, Button, Table, message, Row } from 'antd';
 import glob from "glob";
 
 import { COLUMNS } from "../constants/table";
@@ -93,13 +93,17 @@ const Index = ({ fileList, dir, cwd }) => {
         >
           <Checkbox />
         </Item>
-        <Button type='primary' htmlType='submit'>Search</Button>
+        <Row justify='end' style={{ marginBottom: 16 }}>
+          <Button type='primary' htmlType='submit'>Search</Button>
+        </Row>
       </Form>
       
       <Table dataSource={fileList} columns={COLUMNS} pagination={false} />
-      <Button onClick={copyToClipboard}>
-        Copy Table Content to Clipboard
-      </Button>
+      <Row justify='end' style={{ marginTop: 16 }}>
+        <Button onClick={copyToClipboard}>
+          Copy Table Content to Clipboard
+        </Button>
+      </Row>
     </>
   );
 };
